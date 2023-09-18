@@ -1,8 +1,8 @@
-# Laporan Proyek Machine Learning - Nama Anda
+# Laporan Proyek Machine Learning - Rayhan Gibrani Uhum 
 
 ## Project Overview
 
-Pada bagian ini, Kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
+Dengan berkembangnya layanan live streamin seprti disney plus , netflix dan lain lain , tentu membuat para penonton menjadi nemiliki banyak pilihan .Terkadang penonton setelah menonton sebuah film ingin menonton film lainnya yang memiliki karakteristik sama .oleh sebab itu , adanya projek ini untuk membantu penonton / pecinta film untuk menikmati series atau film setelah series kesayangan mereka selesai.
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Jelaskan mengapa proyek ini penting untuk diselesaikan.
