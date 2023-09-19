@@ -43,11 +43,11 @@ setelah membahas file yang ada dalam **zip** grouplens/movielens tentunya selanj
 
 - movies.csv
   
-| faeature | penjelasan |
-| --- | --- |
-|movieId | ID (nomor identitas) bagi setiap film |
-|title | memuat judul |
-|genre | memuat genre pada film |
+  | faeature | penjelasan |
+  | --- | --- |
+  |movieId | ID (nomor identitas) bagi setiap film |
+  |title | memuat judul |
+  |genre | memuat genre pada film |
 
 - rating.csv.
 
