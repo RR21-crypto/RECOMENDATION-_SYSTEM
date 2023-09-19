@@ -3,37 +3,24 @@
 ## Project Overview
 
 Dengan berkembangnya layanan live streamin seprti disney plus , netflix dan lain lain , tentu membuat para penonton menjadi nemiliki banyak pilihan .Terkadang penonton setelah menonton sebuah film ingin menonton film lainnya yang memiliki karakteristik sama .oleh sebab itu , adanya projek ini untuk membantu penonton / pecinta film untuk menikmati series atau film setelah series kesayangan mereka selesai.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Jelaskan mengapa proyek ini penting untuk diselesaikan.
-- Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
   
   Format Referensi: [Judul Referensi](https://scholar.google.com/) 
 
 ## Business Understanding
 
-Pada bagian ini, Anda perlu menjelaskan proses klarifikasi masalah.
+seperti yang teah di bahas pada sub bab sebelumnya , tentunya akan mempermudah user untuk menemukan film atau series yang sesuai dengan yang mereka sukai , selain daripada itu sitem ini dapat menguntungkan kedua belah pihak baik sebagai user ataupun pemilik layanan.
 
 Bagian laporan ini mencakup:
 
 ### Problem Statements
 
-Menjelaskan pernyataan masalah:
-- Pernyataan Masalah 1
-- Pernyataan Masalah 2
-- Pernyataan Masalah n
-
+-- bagaimana cara  memberikan rekomendasi film yang sesuai dengan user dan menjadi relavan dan sesuai dengan selera dari prilaku user dan rating pengguna 
+-- bagaimana hasil evaluasi dari model rekomendasi relevan dan sesuai dengan prilaku dan rating dari pengguna lain. 
 ### Goals
+dalam projek ini tujuan  yang ingin di capai seperti pada poin di bawah.
 
-Menjelaskan tujuan proyek yang menjawab pernyataan masalah:
-- Jawaban pernyataan masalah 1
-- Jawaban pernyataan masalah 2
-- Jawaban pernyataan masalah n
-
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menambahkan bagian “Solution Approach” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
+--mengetahui cara mengetahui film yang relevan dengan pengguna, serta mengevaluasi model tersebut .
+-- memberikan hasil rekomendasi dari  model yang relevan denngan selera dan rating pengguna lain. 
 
     ### Solution statements
     - Mengajukan 2 atau lebih solution approach (algoritma atau pendekatan sistem rekomendasi).
