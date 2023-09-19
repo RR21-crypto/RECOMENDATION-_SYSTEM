@@ -20,7 +20,7 @@ Bagian laporan ini mencakup:
 dalam projek ini tujuan  yang ingin di capai seperti pada poin di bawah.
 
 -  mengetahui cara mengetahui film yang relevan dengan pengguna, serta mengevaluasi model tersebut .
-   memberikan hasil rekomendasi dari  model yang relevan denngan selera dan rating pengguna lain. 
+-  memberikan hasil rekomendasi dari  model yang relevan denngan selera dan rating pengguna lain. 
 
     ### Solution statements
   setelah memaparkkan apa **problem statement** dan  **Goals**, pada projek ini akan memberikan solusi  sebagai beriku: 
