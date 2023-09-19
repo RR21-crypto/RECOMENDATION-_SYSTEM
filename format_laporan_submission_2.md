@@ -42,6 +42,7 @@ dalam projek ini memiliki beberapa file diantaranya film , ratinig , link. dan t
 setelah membahas file yang ada dalam **zip** grouplens/movielens tentunya selanjutnya adalah penjelasan dari setiap featur yang ada dalam projek ini :
 
 - movies.csv
+  
 | faeature | penjelasan |
 | --- | --- |
 |movieId | ID (nomor identitas) bagi setiap film |
