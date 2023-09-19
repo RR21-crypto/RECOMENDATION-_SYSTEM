@@ -49,7 +49,7 @@ setelah membahas file yang ada dalam **zip** grouplens/movielens tentunya selanj
 |title | memuat judul |
 |genre | memuat genre pada film |
 
-- rating.csv .)
+- rating.csv.)
 
 
 
