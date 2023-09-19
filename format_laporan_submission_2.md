@@ -14,12 +14,13 @@ Bagian laporan ini mencakup:
 
 ### Problem Statements
 
--  bagaimana cara  memberikan rekomendasi film yang sesuai dengan user dan menjadi relavan dan sesuai dengan selera dari prilaku user dan rating pengguna 
+-  bagaimana cara  memberikan rekomendasi film yang sesuai dengan user dan menjadi relavan dan sesuai dengan selera dari prilaku user dan rating pengguna.
 -  bagaimana hasil evaluasi dari model rekomendasi relevan dan sesuai dengan prilaku dan rating dari pengguna lain. 
 ### Goals
 dalam projek ini tujuan  yang ingin di capai seperti pada poin di bawah.
 
 -  mengetahui cara mengetahui film yang relevan dengan pengguna, serta mengevaluasi model tersebut .
+
 -  memberikan hasil rekomendasi dari  model yang relevan denngan selera dan rating pengguna lain. 
 
     ### Solution statements
