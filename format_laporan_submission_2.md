@@ -19,12 +19,13 @@ Bagian laporan ini mencakup:
 ### Goals
 dalam projek ini tujuan  yang ingin di capai seperti pada poin di bawah.
 
--- mengetahui cara mengetahui film yang relevan dengan pengguna, serta mengevaluasi model tersebut .
--- memberikan hasil rekomendasi dari  model yang relevan denngan selera dan rating pengguna lain. 
+-  mengetahui cara mengetahui film yang relevan dengan pengguna, serta mengevaluasi model tersebut .
+   memberikan hasil rekomendasi dari  model yang relevan denngan selera dan rating pengguna lain. 
 
     ### Solution statements
-    - Mengajukan 2 atau lebih solution approach (algoritma atau pendekatan sistem rekomendasi).
-
+  setelah memaparkkan apa **problem statement** dan  **Goals**, pada projek ini akan memberikan solusi  sebagai beriku: 
+  - melakukan eksplorasi data dari data set yang digunakan pada projek ini, dan melakukan pembersihan data serta memilah feature yang akan di gunakan pada model rekomendasi.
+  - pada projek ini menggunakan 2 teknik  yaitu **Content-Based filtering** dan **colaborative filtering**. kedua metode ini sangat relevan mengingat  dalam merekomedasikan film user cenderung melihat genre serta rating pada film .
 ## Data Understanding
 Paragraf awal bagian ini menjelaskan informasi mengenai jumlah data, kondisi data, dan informasi mengenai data yang digunakan. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
 
