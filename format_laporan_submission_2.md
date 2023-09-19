@@ -49,8 +49,32 @@ setelah membahas file yang ada dalam **zip** grouplens/movielens tentunya selanj
 |title | memuat judul |
 |genre | memuat genre pada film |
 
-- rating.csv.)
+- rating.csv.
 
+  | feature | penjelasan |
+  | --- | ---|
+  |userId | memuat nomor Id setiap **user** dalam data |
+  |movieId | memuaat ID dalam setiap film |
+  | rating | memuar rating dari seriap user dengan skala dari 1 sampai dengan 5. |
+  | time stamp | memuar timestamp |
+  
+- tags .csv
+
+  |feature | penjelasan |
+  | --- | --- |
+  |userId | memuat nomor ID dari **user** / pengguna |
+  | movieId | memuat nomor ID dari setiap  film |
+  | tag | memuar  tah dari film |
+  |time stamp | memuat **timestamp** dari film |
+
+- links.csv
+
+  |feature | penjelasan |
+  | --- | --- |
+  | movieId | berisi tentang ID dari film |
+  | imdbId | memuat nomor ID fim yang merujuk pada website IMDb |
+  | tmbId | memuat nomor ID film yang merujuk pada website TMDB |
+  
 
 
 
