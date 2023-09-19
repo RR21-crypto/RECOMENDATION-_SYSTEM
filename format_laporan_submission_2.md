@@ -27,8 +27,28 @@ dalam projek ini tujuan  yang ingin di capai seperti pada poin di bawah.
   setelah memaparkkan apa **problem statement** dan  **Goals**, pada projek ini akan memberikan solusi  sebagai beriku: 
   - melakukan eksplorasi data dari data set yang digunakan pada projek ini, dan melakukan pembersihan data serta memilah feature yang akan di gunakan pada model rekomendasi.
   - pada projek ini menggunakan 2 teknik  yaitu **Content-Based filtering** dan **colaborative filtering**. kedua metode ini sangat relevan mengingat  dalam merekomedasikan film user cenderung melihat genre serta rating pada film .
+
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai jumlah data, kondisi data, dan informasi mengenai data yang digunakan. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
+Pada projek ini kami menggunakan data set dari movie lens yang khusus untuk penggunaan dengan tujuan pembelajaran. yang berisi 100,0000 rating , 3,600 tag dan 9000 film .Dataset ini dapat di dwnload melalui link berikut :
+
+https://grouplens.org/datasets/movielens/
+
+dalam projek ini memiliki beberapa file diantaranya film , ratinig , link. dan tag. setiap file mewakili sesuatu seperti :
+- **file film** yang berisi list film  dan genre yang dimiliiki oleh film tersebut
+- **file rating** yang berisi jumlah user yang memberikan rating dan nilai rating yang mereka berika sesuai dengan feature moviId
+- **file tag** yang berisi tag dan timestamp dimana user berhenti atau mengklik
+- **file link"" yang berisi link menuju film
+
+setelah membahas file yang ada dalam **zip** grouplens/movielens tentunya selanjutnya adalah penjelasan dari setiap featur yang ada dalam projek ini :
+
+- movies.csv
+| faeature | penjelasan |
+| --- | --- |
+|movieId | ID (nomor identitas) bagi setiap film |
+
+
+
+
 
 Selanjutnya, uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
 
