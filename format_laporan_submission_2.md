@@ -106,9 +106,14 @@ setelah merapikan data dalam _variable **films**_ selanjutnya adalah pengecekan 
 dari tabel diatas ada beberapa feature ynag memiliki nilai kosong atau kosong , sehingga dengan jumlah yang sedikit  berbanding dengan jumlah data   100,0000 rating , 3,600 tag dan 9000 film penangan paling _effisien_  menangani nya dengan cara menghapus data tersebut.
 ### 
 
+
+
+
 **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan proses data preparation yang dilakukan
 - Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+
+
 
 ## Modeling
 Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk menyelesaikan permasalahan. Sajikan top-N recommendation sebagai output.
