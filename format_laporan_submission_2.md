@@ -80,10 +80,32 @@ setelah membahas file yang ada dalam * *zip** grouplens/movielens tentunya selan
 - Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data beserta insight atau exploratory data analysis.
 
 ## Data Preparation
-dalam menyelasaikan projek ini memiliki beberapa tahapan yang dilakukan, diantaranya melakukan _data cleaning ,missing value,dan reduction data_ . dalam projek ini, hal pertama yang dilakukan adalah melakukan penggabungan **movie.csv** dan **rating.csv** , pemilihan kedua file ini akan berhubungan erat dengan pemilihan metode reekomendasi yang akan dilakukan di projek ini yaitu _user based filtering_ dan _collaborative based filtering_.tujuan dalam melaukan tindakan ini adalah membuat model lebih mudah di pahami dan menghindarkan reduntansi yang terjadi dikarnakan adanya angka dan huruf dalam satu feture yang sama 
+dalam menyelasaikan projek ini memiliki beberapa tahapan yang dilakukan, diantaranya melakukan _data cleaning ,missing value,dan reduction data_ . dalam projek ini, hal pertama yang dilakukan adalah melakukan penggabungan **movie.csv** dan **rating.csv** , pemilihan kedua file ini akan berhubungan erat dengan pemilihan metode reekomendasi yang akan dilakukan di projek ini yaitu _user based filtering_ dan _collaborative based filtering_. 
 
-### Data cleaning 
-seperti yang telah di bahas pada paragraf sebelumnya, dalam projek ini hal pertama yang dilakukan aldah menggabungkan file **movie.csv** dan **rating.csv** yang mana akan menjadi satu variable bernama **films**. seteleh menggabungkan hal pertama yang dapat dilihat dari datasheet kita adanya keanehan dalam feture title ,dalam feture tersebut nama film selalu disertakan dengan tahun rilis. oleh sebab itu , feature _title_disederhankan dengan menghilangkan tahun rilis dan memindahkanya dalam feature baru yang bernama **tahun_rilis** 
+
+### Data cleaning pada _feature_ title  
+seperti yang telah di bahas pada paragraf sebelumnya, dalam projek ini hal pertama yang dilakukan aldah menggabungkan file **movie.csv** dan **rating.csv** yang mana akan menjadi satu variable bernama **films**. seteleh menggabungkan hal pertama yang dapat dilihat dari datasheet kita adanya keanehan dalam feture title ,dalam feture tersebut nama film selalu disertakan dengan tahun rilis. oleh sebab itu , feature _title_disederhankan dengan menghilangkan tahun rilis dan memindahkanya dalam feature baru yang bernama **tahun_rilis** . tujuan dalam melaukan tindakan ini adalah membuat model lebih mudah di pahami dan menghindarkan reduntansi yang terjadi dikarnakan adanya angka dan huruf dalam satu feture yang sama.
+
+### Data cleaning pada _feature_ ratings 
+
+Setelah menyelesaikan data cleaning , pada projek ini hal yang perlu di perhatikan adalah nilai yang ada pada rating . Pada saat pengecekan di temui bahwa skala yang di gunakan dalam rating tidak menggunkana angka bulat, sehingga dalam kasus ini memutuskan untuk mengubah sekala dengan angka bulat untuk memudahkan user mengetahui seberapa bagus film tersebut .
+
+ ### Data cleaning pada _feature_ timestamps 
+dalam feature rating terlihat bahwa angka yang tertera sangat sulit di pahami ,dikarenakan untuk mempermudah kita dalam memahami data  kita mengubah angka yang terlihat secara sekilas seperti anka _random_ menjad angka dengan format tahun tanggal dan bulan .  
+
+### Penanganganan _Missing Vlue_
+setelah merapikan data dalam _variable **films**_ selanjutnya adalah pengecekan apakah data set memiliki nilai yang lengkapa dan tidak ada nilai uang _null_ dan kosong sehingga dalam kasus ini terdapat nilai kosong yang terdapat dalam dataset diantaranya 
+
+|feature | missing value |
+| --- | --- |
+|tahun rilis | 17 |
+|user Id | 18 |
+|rating | 18 |
+|time stamp | 18 |
+
+dari tabel diatas ada beberapa feature ynag memiliki nilai kosong atau kosong , sehingga dengan jumlah yang sedikit  berbanding dengan jumlah data   100,0000 rating , 3,600 tag dan 9000 film penangan paling _effisien_  menangani nya dengan cara menghapus data tersebut.
+### 
+
 **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan proses data preparation yang dilakukan
 - Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
