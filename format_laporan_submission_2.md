@@ -116,6 +116,35 @@ dari tabel diatas ada beberapa feature ynag memiliki nilai kosong atau kosong , 
 
 
 ## Modeling
+  Untuk menyelasaikan masalah yang sudah disinggung sebelumnya, pada projek ini solusii yang di tawarkan ada dua yaitu _Content Based Filtering_ dan _ collaborative filtering_. kedua solusi ini memiliki keunggulan dan kelebihan tersendiri.Selanjutnya akan di perlihatkan bagaimamna kedua metode ini dapat menyelesaikan permasalahan yang telah disebutkan sebelumnya.
+
+### Content Based Filtering
+metode ini merupakan suau metode yang mempelajari profil minat pengguna baru berdasarkan data dari objek yang telah dinilai pengguna. Algoritma ini bekerja dengan menyarankan item serupa yang pernah disukai di masa lalu atau sedang dilihat di masa kini kepada pengguna. tentunya semakin banyak data semakin bagus pula metode ini.namun tentu sistem ini memiliki kelebihan dan kekurangan diantaranya  : 
+
+**Kelebihan Content-Based Filtering**:
+- Personalisasi: Content-Based Filtering dapat memberikan rekomendasi yang sangat personal karena bergantung pada preferensi pengguna yang sudah diketahui. Ini memungkinkan rekomendasi yang cocok dengan minat dan sejarah pengguna.
+- Tidak Memerlukan Data Pengguna Lain: Metode ini tidak memerlukan data pengguna lain atau kolaborasi antar pengguna. Ini bermanfaat dalam kasus-kasus di mana data pengguna terbatas atau tidak tersedia sama sekali.
+- Transparansi: Model Content-Based Filtering cenderung lebih transparan daripada metode kolaboratif. Anda dapat menjelaskan rekomendasi kepada pengguna dengan merujuk pada fitur-fitur item yang mereka sukai.
+- Penanganan Item Baru: Content-Based Filtering dapat menangani item baru dengan baik, bahkan jika tidak ada data kolaboratif. Ini karena rekomendasi didasarkan pada karakteristik item itu sendiri.
+
+Kekurangan Content-Based Filtering:
+- Keterbatasan Dalam Rekomendasi Serendah: Content-Based Filtering cenderung membatasi rekomendasi pada item yang serupa dengan yang sudah dikonsumsi oleh pengguna. Ini dapat mengurangi kemungkinan pengguna menemukan konten yang berbeda atau mendapat penawaran yang lebih menarik.
+- Keterbatasan dalam Memahami Preferensi Kompleks: Meskipun Content-Based Filtering dapat memahami preferensi berdasarkan fitur-fitur, ia mungkin tidak dapat menangkap preferensi yang lebih kompleks atau bervariasi. Misalnya, ia mungkin kesulitan merekomendasikan item yang berbeda dari biasa pengguna.
+- Keterbatasan Data: Kinerja Content-Based Filtering sangat tergantung pada kualitas dan kelengkapan data atribut item. Jika data ini tidak memadai atau tidak lengkap, maka kualitas rekomendasi akan terpengaruh.
+- Over-Spesialisasi: Ada risiko bahwa model Content-Based Filtering bisa terlalu spesifik dalam rekomendasi, menghasilkan daftar rekomendasi yang terlalu serupa.
+- Kurangnya Diversifikasi: Content-Based Filtering cenderung kurang efektif dalam menghadirkan variasi dalam rekomendasi karena cenderung merekomendasikan item dengan karakteristik yang sama.
+
+### menyiapkan Variable
+dalam projek in hal yang pertama kali dilakukakn adalah membuat sebuah variable dari data yang telah kita olah dari tahap _Data preprocessing _ dari sana kita dapa menggunakan command _tolist_ untuk membuat variable bernama _data_.Setelah kita mendapatkan variable , pada projek ini untuk mempermudah pengerjaaan model pertama ,hal pertama dilakukan adalah  mengubah 
+ nama variable dari data menjadi _saringan_. 
+
+### TF-IDF Vectorizer
+setelah menyiapakan nama variable , pada tahap selanjutnya kita akan menggunakan TF-IDF Vectorizer yang berasal dari library sklearn . dengan menggunakan fungsi TfidfVectorizer() kita dapat menggunakan fitur ini. Setelah menggunkan itu kita mengubah variable  menjadi bentuk matriks .yang mana pada matriks menunjukkan korelasi antara film dengan genre-nya.
+![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/4abe8d50-4c83-4e60-a835-42b08c8aa68f)
+
+
+
+
 Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk menyelesaikan permasalahan. Sajikan top-N recommendation sebagai output.
 
 **Rubrik/Kriteria Tambahan (Opsional)**: 
