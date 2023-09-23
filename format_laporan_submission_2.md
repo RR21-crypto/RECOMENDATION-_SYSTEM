@@ -147,6 +147,29 @@ setelah menyiapakan nama variable , pada tahap selanjutnya kita akan menggunakan
 
 Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk menyelesaikan permasalahan. Sajikan top-N recommendation sebagai output.
 
+ ### Cosine Smiliarity 
+ Selanjutnya pada projekk ini akan menggunakan Cosine Smiliarity , yang mana dengan fungsi ini dapat menghitung degree smiliarity anatar judul fim dan korleasi dengan kategori genre yang dimiliki oleh film tersebut.Perhitungan similarity merupakan tahapan paling penting dalam pendekatan content-based filtering, karena pada dasarnya pendekatan ini menerapkan prinsip kesamaan antar item untuk mendapatkan hasil rekomendasi yang sesuai. Output dari cosine similarity akan menghasilkan suatu matrix kesamaan yang bisa dilihat pada konversi ke bentuk dataframe berikut.
+ 
+
+![cosine smiliarity_1](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/14832e21-25c6-4e91-a726-73ed7e9aef6d)
+
+dari gambar diatas diketahui bentuk matriks yang  dapatkan adalah bentuk 9708 x 9708 dari gambar tersebut tidak hanya bentuk matriks saja yang  dapatkan, namun dapat dilihat kesamaaan anatr film , sperti yang terlihat dari gambar diatas yang di beri kotak berwarna merah bahwa _film_ _George Carlin: Jammin' in New York_ dan film _Oh, God! Book II_ memliliki nilai kesamaan berupa 1.0 . sehingga dapat diartikan bahwa kedua film memiliki kemiripan yang sanagt tinggi bahkan hampir sama berdasarkan genre yang mereka miliki, sehingga model dapat merekomendasikan antara kedua film.
+
+ ### Membuat Function khusus 
+ pada tahapan ini , adalah tahapan untuk membuat sebuah fungsi khusus untuk menampilkan sistem rekomendasi yang sudah kita buat pada tahap sebelumnya,dengan menggunkaan funtion ini akan menampilkan rekomendasi bersarkan nilai kemiripan sesuai dengan model yang sudah kita olah sebelumnya. hal yang  pertama dilakukan oleh funtion ini mengambil data yang sudah diolah dengan sesuai range nilai kesamaan  yang telah di _declare_ lalu setelah data masuk  tahapan ini berda dalam _variable closest_, selanjutnya dalam merekemondasikan film ,normalnya namam yang diinginkan oleh user tidak akan tampil dalam daftar rekomendasi yang diinginkan, oleh karena itu sistem akan mendrop hal tersebut. jumlah rekomendasi yang ditampilkan berdasarkan nilai **K** , dalam projek ini nilainya adalah 8 . 
+![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/45a3533e-9990-4f8a-acae-ee1158cc0ba0)
+
+### Recomendation 
+masuk pada tahap akhir dalam metode ini yaitu mendapatkan rekomendasi, dalam projek ini hal pertama yang dilakukan apakah judul yang diinginkan user ada dalam daftar yang kita miliki seperti pada gambar dibawah.
+![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/95ad70bb-5255-4390-93bf-02d5818604e7)
+ setelah itu user bisa mengetahui rekomendasi film yang sebelumnya dengan menggunakan function di bawah
+ 
+ ![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/85253de9-6e20-4cc8-9a4a-b1b4085e7d7a)
+ 
+dapat dilihat model merekomendasikan 8 judul film dengan genre yang sama yaitu genre _comedy_.
+
+
+ 
 **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menyajikan dua solusi rekomendasi dengan algoritma yang berbeda.
 - Menjelaskan kelebihan dan kekurangan dari solusi/pendekatan yang dipilih.
