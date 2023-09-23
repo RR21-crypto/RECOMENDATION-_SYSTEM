@@ -140,9 +140,14 @@ dalam projek in hal yang pertama kali dilakukakn adalah membuat sebuah variable 
 
 ### TF-IDF Vectorizer
 setelah menyiapakan nama variable , pada tahap selanjutnya kita akan menggunakan TF-IDF Vectorizer yang berasal dari library sklearn . dengan menggunakan fungsi TfidfVectorizer() kita dapat menggunakan fitur ini. Setelah menggunkan itu kita mengubah variable  menjadi bentuk matriks .yang mana pada matriks menunjukkan korelasi antara film dengan genre-nya.
-![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/4abe8d50-4c83-4e60-a835-42b08c8aa68f)
 
-
+| judul | horror | thriller | western  | drama | adventure |
+| --- | --- | --- | --- | --- | --- |
+|Woyzeck | 0.0 | 00.00 | 0.0 | 1.0000 | 0.0|
+|Play the Game | 0.0 | 00.00 | 0.0 | 1.0000 | 0.0|
+|Character | 0.0 | 00.00 | 0.0 | 1.0000 | 0.0|
+|Wild Oatsk | 0.0 | 00.00 | 0.0 | 0.0000 | 0.0|
+|Too Late for Tears | 0.0 | 0.264118	 | 0.0 | 0.180515	 | 0.0|
 
 
 Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk menyelesaikan permasalahan. Sajikan top-N recommendation sebagai output.
@@ -218,7 +223,7 @@ Data dibagi untuk data train dan validasi dengan komposisi 80/20. Pembagian ini 
 pada tahap ini , model akan menghitung kecocokan antara pengguna dan resto dengan teknik embedding.peroses ini melakukan teknik perkalian dot product antara judul dan genre dengan skala kecocokan [ 0, 1] dan aktivasi sigmoid., pada proses compile dilakukan menggunakan BinaryCrossentropy untuk menghitung loss function, Adam (Adaptive Moment Estimation) sebagai optimizer, dan root mean squared error (RMSE) sebagai metrics evaluation. Proses training model berjalan sebanyak 100 epochs sebagai berikut. dalam  melakuakn peroses training terdapat fungsi call back untuk menghentikan ketika RMSE kurang dai 0.1 mengingat banyaknya pelatihan  yang dilakukan pada latihan ini , dengan begitu dapat menghemat waktu.
 
 ### Visualisasi Metrik
-tahap ini di tujukan untuk melihat hasil latihan model yang kita lakukan, dari sini dapat dilihat perbedaan RMSE antara _train dan test_.dengan melihat gambar dibawah di dapati nilai dari RMSE test adalah 0.27 dan untuk train adalah 0.17.
+tahap ini di tujukan untuk melihat hasil latihan model yang kita lakukan, dari sini dapat dilihat perbedaan RMSE antara _train dan test_.dengan melihat gambar dibawah di dapati nilai sedikit kurang stabil namun tetap menunjukan train menurun baik pada test ataupun train 
 
 
 
