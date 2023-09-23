@@ -235,21 +235,17 @@ setelah itu mari lihat hasil rekomendasi yang di dapatkan user
 
 ![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/2b6fe2be-4c6e-4330-af89-a07c99a65a89)
 
- setelah melihat hasil rekomendasi lalu kita dapat lihat hasil recomendasi mengeluarkan film dengan genre comedy  yang mana adapat di simpulkan bahwa nilai _precision yang kita dapatkan adalah 8/8 atau bisa di sebut 100 persen 
+ setelah melihat hasil rekomendasi lalu kita dapat lihat hasil recomendasi mengeluarkan film dengan genre comedy  yang mana adapat di simpulkan bahwa nilai _precision yang kita dapatkan adalah 8/8 atau bisa di sebut 100 persen disebabkan genre yang dikeluarkan sama persis dengan film yang ingin user rekomendasi kan.
+
+ ### Collaborative Filtering
+ 
+Evaluasi kinerja pendekatan Collaborative Filtering umumnya menggunakan metrik evaluasi yang dikenal sebagai Root Mean Squared Error (RMSE). RMSE adalah metode standar untuk mengukur rata-rata kesalahan suatu model dalam melakukan prediksi. Proses perhitungan RMSE dimulai dengan mengurangkan nilai prediksi dari nilai observasi, yang kemudian hasilnya dikuadratkan. Setelah itu, semua hasil kuadrat ini dijumlahkan (sigma jumlah) dan kemudian dibagi dengan jumlah data (n). Hasil dari perhitungan ini kemudian diakarkan kuadrat untuk menghasilkan nilai RMSE sesuai dengan rumus berikut.
+
+![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/074c1ab5-c17c-4f7c-ae85-1b007979858b)
+
+setelah memahami apa itu RMSE, pada projek ini terdapat pengurangan nilai RMSE yang dapat di _visualisasikan_  dari grafik dibawah, terlihat bahwa terjadi penurunan nilai RMSE walau terlihat sedikit tidak konsisten dimana adanya naik dan turun , namun jika melihat trendnya , terlihat trend penurunan RMSE sehingga didapati hasil akkhir dimana  0.27 pada nilai test dan 0.17 pada train.
+
+![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/14ade81f-72b2-4370-81f3-1c8419f14b1f)
 
 
 
-
-
-Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
-
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
-
-**---Ini adalah bagian akhir laporan---**
-
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
