@@ -244,11 +244,24 @@ setelah mengetahui metriks yang di gunakan untuk mengukur precision yang di dapa
 ![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/fa79d7ae-94d7-47bb-a4fe-0f41e90c03b8)
 lalu lihat film yang ingin di rekomendasikan , disini dalam projek ini user menginginkan rekomendasi dari fillm _Oh, God! Book II_ yang memiliki genre _comedy_ .
 
-![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/50c5d506-06c9-4e89-9da8-5b2263d99be1)
+| no |judul|genre| id |
+| --- | --- | --- | --- |
+| 1 | Oh, God! Book II | Comedy | 5213 | 
 
 setelah itu mari lihat hasil rekomendasi yang di dapatkan user 
 
-![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/2b6fe2be-4c6e-4330-af89-a07c99a65a89)
+ 
+| no |judul|genre|
+| --- | --- | --- |
+| 1 | Andrew Dice Clay: Dice Rules | Comedy |
+| 2 | Made| Comedy |
+| 3 |Carry On Don't Lose Your Head | Comedy |
+| 4 | Jack and Jill	 | Comedy |
+| 5 | Dr. Goldfoot and the Bikini Machine | Comedy |
+| 6 | Broadway Danny Rose | Comedy |
+| 7 | Zelig | Comedy |
+| 8 | Big Business	 | Comedy |
+
 
  
  untuk mengevaluasi model ini  menggunnaka nilai metriks precisions dengan similarity yang mana jika melihat hasil yang di dapatkan dari model ini dapat kita hitung sebgai berikut
