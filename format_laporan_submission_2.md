@@ -232,6 +232,7 @@ lalu lihat film yang ingin di rekomendasikan , disini dalam projek ini user meng
 ![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/50c5d506-06c9-4e89-9da8-5b2263d99be1)
 
 setelah itu mari lihat hasil rekomendasi yang di dapatkan user 
+
 ![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/2b6fe2be-4c6e-4330-af89-a07c99a65a89)
 
  setelah melihat hasil rekomendasi lalu kita dapat lihat hasil recomendasi mengeluarkan film dengan genre comedy  yang mana adapat di simpulkan bahwa nilai _precision yang kita dapatkan adalah 8/8 atau bisa di sebut 100 persen 
