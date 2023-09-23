@@ -250,7 +250,14 @@ setelah itu mari lihat hasil rekomendasi yang di dapatkan user
 
 ![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/2b6fe2be-4c6e-4330-af89-a07c99a65a89)
 
- setelah melihat hasil rekomendasi lalu kita dapat lihat hasil recomendasi mengeluarkan film dengan genre comedy  yang mana adapat di simpulkan bahwa nilai _precision yang kita dapatkan adalah 8/8 atau bisa di sebut 100 persen disebabkan genre yang dikeluarkan sama persis dengan film yang ingin user rekomendasi kan.
+ 
+ untuk mengevaluasi model ini  menggunnaka nilai metriks precisions dengan similarity yang mana jika melihat hasil yang di dapatkan dari model ini dapat kita hitung sebgai berikut
+Precision = #of recommendation that are relevant/#of item we recommend.
+Pada rekomendasi film di atas:
+Precission = 8/8.
+Jadi presisinya = 100%
+
+nilai 8/8 untuk precision di dapatkan dari genre yang user ingin kan , sperti yang dilihat genre film dari _Oh, God! Book II_ memiliki satu genre yaitu genre _comedy_ lalau ketika melihat hasil dari rekomedasi yang di berikan oleh model terlihat hasilnya seperti _Andrew Dice Clay: Dice Rules , Made	.Carry On Don't Lose Your Head, dan sisanya_ memiliki satu genre yang sama yaitu genre _comedy_. oleh sebab ke 8 rekomendasi memiliki smiliarity yang sama  maka precision dari model ini adalah 100 persen.
 
  ### Collaborative Filtering
  
