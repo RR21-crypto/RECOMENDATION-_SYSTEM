@@ -173,11 +173,31 @@ setelah itu user bisa mengetahui rekomendasi film yang sebelumnya dengan menggun
  
 dapat dilihat model merekomendasikan 8 judul film dengan genre yang sama yaitu genre _comedy_.
 
+## Model Development Dengan Collaborative Filtering
 
- 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menyajikan dua solusi rekomendasi dengan algoritma yang berbeda.
-- Menjelaskan kelebihan dan kekurangan dari solusi/pendekatan yang dipilih.
+dalam projek ini terdapat beberapa tahap yang dilakuakn untuk mendapatkan hasil yang dibutuhkan , tahap akan di jelaskan sebagai berikut :
+
+### Data preparation 
+dalam tahap ini data yang kita gunakan adalah dari file _rating.csv_ , data tersebut dimasukan kedalam variable **dd** . selanjutnya variable tersebut akan di olah kembali menjadi sesuai dengan format yang kita butuhkan, mulai dari membulatkan nilai rating  dan mengubah format  timestamp .
+
+### Split Data for Training and Validation
+
+Data dibagi untuk data train dan validasi dengan komposisi 80/20. Pembagian ini bertujuan agar data yang digunakan dapat digunakan untuk mengembangkan model dan mengevaluasi performance dari model yang telah dikembangkan.
+
+### peroses Training 
+
+pada tahap ini , model akan menghitung kecocokan antara pengguna dan resto dengan teknik embedding.peroses ini melakukan teknik perkalian dot product antara judul dan genre dengan skala kecocokan [ 0, 1] dan aktivasi sigmoid., pada proses compile dilakukan menggunakan BinaryCrossentropy untuk menghitung loss function, Adam (Adaptive Moment Estimation) sebagai optimizer, dan root mean squared error (RMSE) sebagai metrics evaluation. Proses training model berjalan sebanyak 100 epochs sebagai berikut. dalam  melakuakn peroses training terdapat fungsi call back untuk menghentikan ketika RMSE kurang dai 0.1 mengingat banyaknya pelatihan  yang dilakukan pada latihan ini , dengan begitu dapat menghemat waktu.
+
+### Visualisasi Metrik
+tahap ini di tujukan untuk melihat hasil latihan model yang kita lakukan, dari sini dapat dilihat perbedaan RMSE antara _train dan test_.dengan melihat gambar dibawah di dapati nilai dari RMSE test adalah 0.27 dan untuk train adalah 0.17.
+
+![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/eda3f553-2b97-48ef-a905-47fcd9636962)
+
+### mendapatkan rekomendasi Resto 
+setelah menyelasaikan semua tahap pelatihan dan preparation selanjutnya adalah tajap untuk melihat hasil rekomendasi yang akan di dapatkan, dengan menggunakan fungsi _model.predict()_ hasil rekomendasi dapat di tampilkan seperti yang ada pada gambar di bawah.
+ ![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/77304be7-a756-44f1-bb2a-264046423ba2)
+
+
 
 ## Evaluation
 Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
