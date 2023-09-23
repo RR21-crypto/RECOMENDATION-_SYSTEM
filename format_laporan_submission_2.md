@@ -151,7 +151,7 @@ Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk meny
  Selanjutnya pada projekk ini akan menggunakan Cosine Smiliarity , yang mana dengan fungsi ini dapat menghitung degree smiliarity anatar judul fim dan korleasi dengan kategori genre yang dimiliki oleh film tersebut.Perhitungan similarity merupakan tahapan paling penting dalam pendekatan content-based filtering, karena pada dasarnya pendekatan ini menerapkan prinsip kesamaan antar item untuk mendapatkan hasil rekomendasi yang sesuai. Output dari cosine similarity akan menghasilkan suatu matrix kesamaan yang bisa dilihat pada konversi ke bentuk dataframe berikut.
  
 
-![cosine smiliarity_1](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/14832e21-25c6-4e91-a726-73ed7e9aef6d)
+![cosine smiliarity_1](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/2617a4d9-291a-417d-824a-cecdeebb01fe)
 
 dari gambar diatas diketahui bentuk matriks yang  dapatkan adalah bentuk 9708 x 9708 dari gambar tersebut tidak hanya bentuk matriks saja yang  dapatkan, namun dapat dilihat kesamaaan anatr film , sperti yang terlihat dari gambar diatas yang di beri kotak berwarna merah bahwa _film_ _George Carlin: Jammin' in New York_ dan film _Oh, God! Book II_ memliliki nilai kesamaan berupa 1.0 . sehingga dapat diartikan bahwa kedua film memiliki kemiripan yang sanagt tinggi bahkan hampir sama berdasarkan genre yang mereka miliki, sehingga model dapat merekomendasikan antara kedua film.
 
