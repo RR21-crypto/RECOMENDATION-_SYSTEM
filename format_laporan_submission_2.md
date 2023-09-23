@@ -162,15 +162,30 @@ dari gambar diatas diketahui bentuk matriks yang  dapatkan adalah bentuk 9708 x 
 ### Recomendation 
 masuk pada tahap akhir dalam metode ini yaitu mendapatkan rekomendasi, dalam projek ini hal pertama yang dilakukan apakah judul yang diinginkan user ada dalam daftar yang kita miliki seperti pada gambar dibawah.
 
-![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/95ad70bb-5255-4390-93bf-02d5818604e7)
+| no |judul|genre| id |
+| --- | --- | --- | --- |
+| 1 | Oh, God! Book II | Comedy | 5213 | 
 
 
 setelah itu user bisa mengetahui rekomendasi film yang sebelumnya dengan menggunakan function di bawah
 
  
  
- ![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/85253de9-6e20-4cc8-9a4a-b1b4085e7d7a)
- 
+| no |judul|genre|
+| --- | --- | --- |
+| 1 | Andrew Dice Clay: Dice Rules | Comedy |
+| 2 | Made| Comedy |
+| 3 |Carry On Don't Lose Your Head | Comedy |
+| 4 | Jack and Jill	 | Comedy |
+| 5 | Dr. Goldfoot and the Bikini Machine | Comedy |
+| 6 | Broadway Danny Rose | Comedy |
+| 7 | Zelig | Comedy |
+| 8 | Big Business	 | Comedy |
+
+
+
+
+
 dapat dilihat model merekomendasikan 8 judul film dengan genre yang sama yaitu genre _comedy_.
 
 ## Model Development Dengan Collaborative Filtering
