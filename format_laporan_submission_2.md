@@ -175,7 +175,21 @@ dapat dilihat model merekomendasikan 8 judul film dengan genre yang sama yaitu g
 
 ## Model Development Dengan Collaborative Filtering
 
-dalam projek ini terdapat beberapa tahap yang dilakuakn untuk mendapatkan hasil yang dibutuhkan , tahap akan di jelaskan sebagai berikut :
+dalam projek ini terdapat beberapa tahap yang dilakuakn untuk mendapatkan hasil yang dibutuhkan ,tentunya sistem ini memmiliki kelebihan dan kekurangan diantaranya: 
+
+kelebihan :
+- Rekomendasi Serendah: Collaborative Filtering mampu memberikan rekomendasi yang sangat sesuai dengan preferensi pengguna. Ini berdasarkan kesamaan preferensi dengan pengguna lain yang memiliki sejarah konsumsi serupa.
+- Tidak Bergantung pada Informasi Item: Metode ini tidak memerlukan informasi rinci tentang atribut item. Ini berguna ketika Anda memiliki banyak item tanpa informasi deskriptif yang cukup.
+- Kemampuan Menangani Perubahan Data: Collaborative Filtering dapat menangani perubahan data dengan baik. Ketika ada penambahan item baru atau perubahan preferensi pengguna, model dapat diperbarui dengan data terbaru.
+- Efektif untuk Item Ritel: Metode ini cocok untuk merekomendasikan item ritel, seperti produk e-commerce, film, atau musik, karena preferensi pengguna dapat dengan mudah diperoleh dari perilaku sebelumnya.
+
+kekurangan : 
+- Masalah Cold Start: Metode ini cenderung tidak efektif saat menghadapi situasi "cold start" di mana Anda memiliki sedikit atau tidak ada data perilaku pengguna atau item.
+- Permasalahan Skalabilitas: Untuk platform besar dengan jutaan pengguna dan item, perhitungan kesamaan dalam Collaborative Filtering bisa menjadi mahal secara komputasi.
+- Risiko Over-Spesialisasi: Ada risiko bahwa model Collaborative Filtering akan menjadi terlalu spesifik dalam rekomendasi, terutama jika tidak ada cukup variasi dalam data pelatihan.
+- Masalah Privasi: Dalam implementasi nyata, perlu diperhatikan masalah privasi, terutama dalam metode Collaborative Filtering berbasis pengguna, karena data pengguna harus dibagikan atau digunakan untuk menghitung rekomendasi.
+
+tahap akan di jelaskan sebagai berikut :
 
 ### Data preparation 
 dalam tahap ini data yang kita gunakan adalah dari file _rating.csv_ , data tersebut dimasukan kedalam variable **dd** . selanjutnya variable tersebut akan di olah kembali menjadi sesuai dengan format yang kita butuhkan, mulai dari membulatkan nilai rating  dan mengubah format  timestamp .
