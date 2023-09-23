@@ -164,7 +164,10 @@ masuk pada tahap akhir dalam metode ini yaitu mendapatkan rekomendasi, dalam pro
 
 ![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/95ad70bb-5255-4390-93bf-02d5818604e7)
 
- setelah itu user bisa mengetahui rekomendasi film yang sebelumnya dengan menggunakan function di bawah
+
+setelah itu user bisa mengetahui rekomendasi film yang sebelumnya dengan menggunakan function di bawah
+
+ 
  
  ![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/85253de9-6e20-4cc8-9a4a-b1b4085e7d7a)
  
