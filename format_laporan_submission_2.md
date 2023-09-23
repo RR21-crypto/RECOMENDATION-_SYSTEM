@@ -205,7 +205,7 @@ pada tahap ini , model akan menghitung kecocokan antara pengguna dan resto denga
 ### Visualisasi Metrik
 tahap ini di tujukan untuk melihat hasil latihan model yang kita lakukan, dari sini dapat dilihat perbedaan RMSE antara _train dan test_.dengan melihat gambar dibawah di dapati nilai dari RMSE test adalah 0.27 dan untuk train adalah 0.17.
 
-![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/eda3f553-2b97-48ef-a905-47fcd9636962)
+
 
 ### mendapatkan rekomendasi Resto 
 setelah menyelasaikan semua tahap pelatihan dan preparation selanjutnya adalah tajap untuk melihat hasil rekomendasi yang akan di dapatkan, dengan menggunakan fungsi _model.predict()_ hasil rekomendasi dapat di tampilkan seperti yang ada pada gambar di bawah.
