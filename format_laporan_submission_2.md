@@ -189,7 +189,7 @@ kekurangan :
 - Risiko Over-Spesialisasi: Ada risiko bahwa model Collaborative Filtering akan menjadi terlalu spesifik dalam rekomendasi, terutama jika tidak ada cukup variasi dalam data pelatihan.
 - Masalah Privasi: Dalam implementasi nyata, perlu diperhatikan masalah privasi, terutama dalam metode Collaborative Filtering berbasis pengguna, karena data pengguna harus dibagikan atau digunakan untuk menghitung rekomendasi.
 
-tahap akan di jelaskan sebagai berikut :
+tahap akan di jelaskan peroses untuk mendapatkan hasil rekomendasi sebagai berikut :
 
 ### Data preparation 
 dalam tahap ini data yang kita gunakan adalah dari file _rating.csv_ , data tersebut dimasukan kedalam variable **dd** . selanjutnya variable tersebut akan di olah kembali menjadi sesuai dengan format yang kita butuhkan, mulai dari membulatkan nilai rating  dan mengubah format  timestamp .
@@ -214,6 +214,32 @@ setelah menyelasaikan semua tahap pelatihan dan preparation selanjutnya adalah t
 
 
 ## Evaluation
+setelah menyelesaikan semua model selajutnya adalah tahap untuk mengevaluasi peforma dari model yang di kembangkan pada projek ini, pada projek ini model menggunakan dua buah metode yang maan akan di evaluasi satu persatu.\
+### Evaluasi Content Based filteing 
+pada metode ini untuk mengukur performance model diukur menggunakan nilai metriks precisions dengan similarity. cosine smiliarity dapat di hitung secara manual dengan menggunakan rumus yang ada pada gambar di bawah : 
+
+![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/1d685c64-3840-4bd0-b419-5cf2dce37948)
+
+setelah itu metrik yang digunakan dapat di ilustrasikan seperti ilustrasi di bawah, dari gambar di bawah dapat nilai dari smiliarity yang  di dapat pada di gambarkan seperti di bawah , dimana semakin besar nilai smiliarity yang dimiliki maka semakin besar sudut yang kita dpatkan dimana nilai _smiliarity_ nya adalah 1 begitu juga sebaliknya. 
+![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/86599dca-8e81-4da1-8db8-70ccc0cac446)
+
+
+setelah mengetahui metriks yang di gunakan untuk mengukur precision yang di dapatkan dapat menggunkanan rumus yang ada di bawah :
+
+![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/fa79d7ae-94d7-47bb-a4fe-0f41e90c03b8)
+lalu lihat film yang ingin di rekomendasikan , disini dalam projek ini user menginginkan rekomendasi dari fillm _Oh, God! Book II_ yang memiliki genre _comedy_ .
+
+![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/50c5d506-06c9-4e89-9da8-5b2263d99be1)
+
+setelah itu mari lihat hasil rekomendasi yang di dapatkan user 
+![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/2b6fe2be-4c6e-4330-af89-a07c99a65a89)
+
+ setelah melihat hasil rekomendasi lalu kita dapat lihat hasil recomendasi mengeluarkan film dengan genre comedy  yang mana adapat di simpulkan bahwa nilai _precision yang kita dapatkan adalah 8/8 atau bisa di sebut 100 persen 
+
+
+
+
+
 Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
 
 Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
