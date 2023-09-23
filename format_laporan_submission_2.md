@@ -223,13 +223,13 @@ tahap ini di tujukan untuk melihat hasil latihan model yang kita lakukan, dari s
 
 
 ### mendapatkan rekomendasi Resto 
-setelah menyelasaikan semua tahap pelatihan dan preparation selanjutnya adalah tajap untuk melihat hasil rekomendasi yang akan di dapatkan, dengan menggunakan fungsi _model.predict()_ hasil rekomendasi dapat di tampilkan seperti yang ada pada gambar di bawah.
+setelah menyelasaikan semua tahap pelatihan dan preparation selanjutnya adalah tajap untuk melihat hasil rekomendasi yang akan di dapatkan, dengan menggunakan fungsi yang telah kita buat sebelumnya , hasil rekomendasi dapat di tampilkan seperti yang ada pada gambar di bawah.
  ![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/77304be7-a756-44f1-bb2a-264046423ba2)
 
 
 
 ## Evaluation
-setelah menyelesaikan semua model selajutnya adalah tahap untuk mengevaluasi peforma dari model yang di kembangkan pada projek ini, pada projek ini model menggunakan dua buah metode yang maan akan di evaluasi satu persatu.\
+setelah menyelesaikan semua model selajutnya adalah tahap untuk mengevaluasi peforma dari model yang di kembangkan pada projek ini, pada projek ini model menggunakan dua buah metode yang maan akan di evaluasi satu persatu.
 ### Evaluasi Content Based filteing 
 pada metode ini untuk mengukur performance model diukur menggunakan nilai metriks precisions dengan similarity. cosine smiliarity dapat di hitung secara manual dengan menggunakan rumus yang ada pada gambar di bawah : 
 
