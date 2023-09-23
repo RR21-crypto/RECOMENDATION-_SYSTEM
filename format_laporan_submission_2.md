@@ -223,12 +223,12 @@ Data dibagi untuk data train dan validasi dengan komposisi 80/20. Pembagian ini 
 pada tahap ini , model akan menghitung kecocokan antara pengguna dan resto dengan teknik embedding.peroses ini melakukan teknik perkalian dot product antara judul dan genre dengan skala kecocokan [ 0, 1] dan aktivasi sigmoid., pada proses compile dilakukan menggunakan BinaryCrossentropy untuk menghitung loss function, Adam (Adaptive Moment Estimation) sebagai optimizer, dan root mean squared error (RMSE) sebagai metrics evaluation. Proses training model berjalan sebanyak 100 epochs sebagai berikut. dalam  melakuakn peroses training terdapat fungsi call back untuk menghentikan ketika RMSE kurang dai 0.1 mengingat banyaknya pelatihan  yang dilakukan pada latihan ini , dengan begitu dapat menghemat waktu.
 
 ### Visualisasi Metrik
-tahap ini di tujukan untuk melihat hasil latihan model yang kita lakukan, dari sini dapat dilihat perbedaan RMSE antara _train dan test_.dengan melihat gambar dibawah di dapati nilai sedikit kurang stabil namun tetap menunjukan train menurun baik pada test ataupun train 
-
+tahap ini di tujukan untuk melihat hasil latihan model yang kita lakukan, dari sini dapat dilihat perbedaan RMSE antara _train dan test_.dengan menggunakan 100  kali pelatihan tentunya di harapkan nilai RMSE menurun secara signifikan namun dengan metode ini akan memakan waktu yang lama untuk pelatihan. disisi lain dengan  tahapan ini akan terlihat jelas perbedaan RMSE pada _train_ dan _test_. untuk grafik dan angka akan di bahas pada pembahasan evaluasi matrik.
 
 
 ### mendapatkan rekomendasi Resto 
 setelah menyelasaikan semua tahap pelatihan dan preparation selanjutnya adalah tajap untuk melihat hasil rekomendasi yang akan di dapatkan, dengan menggunakan fungsi yang telah kita buat sebelumnya , hasil rekomendasi dapat di tampilkan seperti yang ada pada gambar di bawah.
+
  ![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/77304be7-a756-44f1-bb2a-264046423ba2)
 
 
