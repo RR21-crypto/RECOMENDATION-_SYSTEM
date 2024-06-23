@@ -1,291 +1,285 @@
-# Laporan Proyek Machine Learning - Rayhan Gibrani Uhum 
+# Machine Learning Project Report - Rayhan Gibrani Uhum
 
 ## Project Overview
 
-Dengan berkembangnya layanan live streamin seprti disney plus , netflix dan lain lain , tentu membuat para penonton menjadi nemiliki banyak pilihan .Terkadang penonton setelah menonton sebuah film ingin menonton film lainnya yang memiliki karakteristik sama .oleh sebab itu , adanya projek ini untuk membantu penonton / pecinta film untuk menikmati series atau film setelah series kesayangan mereka selesai.
-  
-
+With the rise of live streaming services like Disney Plus, Netflix, and others, viewers have more options than ever before. Sometimes, after watching a film, viewers want to watch another film with similar characteristics. Therefore, this project aims to help viewers/movie enthusiasts enjoy new series or films after finishing their favorite series.
 
 ## Business Understanding
 
-seperti yang teah di bahas pada sub bab sebelumnya , tentunya akan mempermudah user untuk menemukan film atau series yang sesuai dengan yang mereka sukai , selain daripada itu sitem ini dapat menguntungkan kedua belah pihak baik sebagai user ataupun pemilik layanan.
-
-Bagian laporan ini mencakup:
+As discussed in the previous section, this system will make it easier for users to find films or series that match their preferences. Additionally, this system benefits both users and service providers.
 
 ### Problem Statements
 
--  bagaimana cara  memberikan rekomendasi film yang sesuai dengan user dan menjadi relavan dan sesuai dengan selera dari prilaku user dan rating pengguna.
--  bagaimana hasil evaluasi dari model rekomendasi relevan dan sesuai dengan prilaku dan rating dari pengguna lain. 
+- How to provide film recommendations that are relevant and match user preferences and user behavior ratings.
+- How to evaluate the relevance of the recommendation model to user behavior and ratings from other users.
+
 ### Goals
-dalam projek ini tujuan  yang ingin di capai seperti pada poin di bawah.
 
--  mengetahui cara mengetahui film yang relevan dengan pengguna, serta mengevaluasi model tersebut .
+The goals of this project are as follows:
 
--  memberikan hasil rekomendasi dari  model yang relevan denngan selera dan rating pengguna lain. 
+- To understand how to identify films relevant to users and evaluate the model.
+- To provide relevant recommendations based on user preferences and other users' ratings.
 
-    ### Solution statements
-  setelah memaparkkan apa _problem statement_ dan  * *Goals* *, pada projek ini akan memberikan solusi  sebagai beriku:  
-  - melakukan eksplorasi data dari data set yang digunakan pada projek ini, dan melakukan pembersihan data serta memilah feature yang akan di gunakan pada model rekomendasi.
-  - pada projek ini menggunakan 2 teknik  yaitu _Content-Based filtering_ dan * *colaborative filtering**. kedua metode ini sangat relevan mengingat  dalam merekomedasikan film user cenderung melihat genre serta rating pada film .
+### Solution Statements
+
+After outlining the problem statement and goals, the solutions proposed in this project are as follows:
+
+- Perform data exploration, cleaning, and feature selection for the recommendation model.
+- Use two techniques: Content-Based Filtering and Collaborative Filtering. These methods are highly relevant for recommending films as users tend to look at genres and ratings.
 
 ## Data Understanding
-Pada projek ini kami menggunakan data set dari movie lens yang khusus untuk penggunaan dengan tujuan pembelajaran. yang berisi 100,0000 rating , 3,600 tag dan 9000 film .Dataset ini dapat di dwnload melalui link berikut :
 
-https://grouplens.org/datasets/movielens/
+This project uses the MovieLens dataset, which is specifically for learning purposes. It contains 100,000 ratings, 3,600 tags, and 9,000 films. The dataset can be downloaded from the following link:
 
-dalam projek ini memiliki beberapa file diantaranya film , ratinig , link. dan tag. setiap file mewakili sesuatu seperti :
-- **file film* * yang berisi list film  dan genre yang dimiliiki oleh film tersebut
-- * *file rating** yang berisi jumlah user yang memberikan rating dan nilai rating yang mereka berika sesuai dengan feature moviId
-- * *file tag** yang berisi tag dan timestamp dimana user berhenti atau mengklik
-- * *file link"" yang berisi link menuju film
+[MovieLens Dataset](https://grouplens.org/datasets/movielens/)
 
-setelah membahas file yang ada dalam * *zip** grouplens/movielens tentunya selanjutnya adalah penjelasan dari setiap featur yang ada dalam projek ini :
+The project includes several files, such as movies, ratings, links, and tags. Each file represents something specific:
+
+- **movies.csv**: contains a list of movies and their genres.
+- **ratings.csv**: contains user ratings and values according to the movieId feature.
+- **tags.csv**: contains tags and timestamps where users stopped or clicked.
+- **links.csv**: contains links to the movies.
+
+Below are the explanations for each feature in the dataset:
 
 - movies.csv
-  
-  | faeature | penjelasan |
+
+  | Feature | Description |
   | --- | --- |
-  |movieId | ID (nomor identitas) bagi setiap film |
-  |title | memuat judul |
-  |genre | memuat genre pada film |
+  | movieId | ID for each movie |
+  | title | Movie title |
+  | genre | Movie genre |
 
-- rating.csv.
+- ratings.csv
 
-  | feature | penjelasan |
-  | --- | ---|
-  |userId | memuat nomor Id setiap * *user** dalam data |
-  |movieId | memuaat ID dalam setiap film |
-  | rating | memuar rating dari seriap user dengan skala dari 1 sampai dengan 5. |
-  | time stamp | memuar timestamp |
-  
-- tags .csv
-
-  |feature | penjelasan |
+  | Feature | Description |
   | --- | --- |
-  |userId | memuat nomor ID dari * *user** / pengguna |
-  | movieId | memuat nomor ID dari setiap  film |
-  | tag | memuar  tah dari film |
-  |time stamp | memuat **timestamp* * dari film |
+  | userId | ID for each user |
+  | movieId | Movie ID |
+  | rating | User rating on a scale from 1 to 5 |
+  | timestamp | Timestamp |
+
+- tags.csv
+
+  | Feature | Description |
+  | --- | --- |
+  | userId | User ID |
+  | movieId | Movie ID |
+  | tag | Movie tag |
+  | timestamp | Timestamp |
 
 - links.csv
 
-  |feature | penjelasan |
+  | Feature | Description |
   | --- | --- |
-  | movieId | berisi tentang ID dari film |
-  | imdbId | memuat nomor ID fim yang merujuk pada website IMDb |
-  | tmbId | memuat nomor ID film yang merujuk pada website TMDB |
+  | movieId | Movie ID |
+  | imdbId | IMDb ID |
+  | tmbId | TMDB ID |
 
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data beserta insight atau exploratory data analysis.
+**Additional Criteria (Optional)**:
+- Perform several steps to understand the data, such as data visualization techniques and exploratory data analysis.
 
 ## Data Preparation
-dalam menyelasaikan projek ini memiliki beberapa tahapan yang dilakukan, diantaranya melakukan _data cleaning ,missing value,dan reduction data_ . dalam projek ini, hal pertama yang dilakukan adalah melakukan penggabungan **movie.csv** dan **rating.csv** , pemilihan kedua file ini akan berhubungan erat dengan pemilihan metode reekomendasi yang akan dilakukan di projek ini yaitu _user based filtering_ dan _collaborative based filtering_. 
 
+Several steps were taken to complete this project, including data cleaning, handling missing values, and data reduction. The first step was merging **movies.csv** and **ratings.csv**. The choice of these two files relates closely to the recommendation methods used in this project, i.e., user-based filtering and collaborative filtering.
 
-### Data cleaning pada _feature_ title  
-seperti yang telah di bahas pada paragraf sebelumnya, dalam projek ini hal pertama yang dilakukan aldah menggabungkan file **movie.csv** dan **rating.csv** yang mana akan menjadi satu variable bernama **films**. seteleh menggabungkan hal pertama yang dapat dilihat dari datasheet kita adanya keanehan dalam feture title ,dalam feture tersebut nama film selalu disertakan dengan tahun rilis. oleh sebab itu , feature _title_disederhankan dengan menghilangkan tahun rilis dan memindahkanya dalam feature baru yang bernama **tahun_rilis** . tujuan dalam melaukan tindakan ini adalah membuat model lebih mudah di pahami dan menghindarkan reduntansi yang terjadi dikarnakan adanya angka dan huruf dalam satu feture yang sama.
+### Data Cleaning on the Title Feature
 
-### Data cleaning pada _feature_ ratings 
+After merging **movies.csv** and **ratings.csv** into a variable named **films**, the first noticeable issue in the dataset was the presence of release years in the title feature. Therefore, the title feature was simplified by removing the release years and moving them to a new feature named **release_year**. This makes the model easier to understand and avoids redundancy caused by having both numbers and letters in the same feature.
 
-Setelah menyelesaikan data cleaning , pada projek ini hal yang perlu di perhatikan adalah nilai yang ada pada rating . Pada saat pengecekan di temui bahwa skala yang di gunakan dalam rating tidak menggunkana angka bulat, sehingga dalam kasus ini memutuskan untuk mengubah sekala dengan angka bulat untuk memudahkan user mengetahui seberapa bagus film tersebut .
+### Data Cleaning on the Ratings Feature
 
- ### Data cleaning pada _feature_ timestamps 
-dalam feature rating terlihat bahwa angka yang tertera sangat sulit di pahami ,dikarenakan untuk mempermudah kita dalam memahami data  kita mengubah angka yang terlihat secara sekilas seperti anka _random_ menjad angka dengan format tahun tanggal dan bulan .  
+After data cleaning, attention was given to the rating values. It was found that the rating scale did not use whole numbers. Hence, the ratings were converted to whole numbers to make it easier for users to understand the quality of a film.
 
-### Penanganganan _Missing Vlue_
-setelah merapikan data dalam _variable **films**_ selanjutnya adalah pengecekan apakah data set memiliki nilai yang lengkapa dan tidak ada nilai uang _null_ dan kosong sehingga dalam kasus ini terdapat nilai kosong yang terdapat dalam dataset diantaranya 
+### Data Cleaning on the Timestamps Feature
 
-|feature | missing value |
+The timestamp values in the rating feature were difficult to understand. Therefore, they were converted into a more readable format (year, date, and month).
+
+### Handling Missing Values
+
+After cleaning the data in the **films** variable, the next step was to check for completeness and the presence of null values. The dataset had some missing values, as shown below:
+
+| Feature | Missing Values |
 | --- | --- |
-|tahun rilis | 17 |
-|user Id | 18 |
-|rating | 18 |
-|time stamp | 18 |
+| release_year | 17 |
+| userId | 18 |
+| rating | 18 |
+| timestamp | 18 |
 
-dari tabel diatas ada beberapa feature ynag memiliki nilai kosong atau kosong , sehingga dengan jumlah yang sedikit  berbanding dengan jumlah data   100,0000 rating , 3,600 tag dan 9000 film penangan paling _effisien_  menangani nya dengan cara menghapus data tersebut.
-### 
+Given the small number of missing values compared to the total data (100,000 ratings, 3,600 tags, and 9,000 films), the most efficient way to handle them was by removing the rows with missing values.
 
-
-
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
-
-
+**Additional Criteria (Optional)**:
+- Explain the data preparation process.
+- Justify the necessity of the data preparation steps.
 
 ## Modeling
-  Untuk menyelasaikan masalah yang sudah disinggung sebelumnya, pada projek ini solusii yang di tawarkan ada dua yaitu _Content Based Filtering_ dan _ collaborative filtering_. kedua solusi ini memiliki keunggulan dan kelebihan tersendiri.Selanjutnya akan di perlihatkan bagaimamna kedua metode ini dapat menyelesaikan permasalahan yang telah disebutkan sebelumnya.
 
-### Content Based Filtering
-metode ini merupakan suau metode yang mempelajari profil minat pengguna baru berdasarkan data dari objek yang telah dinilai pengguna. Algoritma ini bekerja dengan menyarankan item serupa yang pernah disukai di masa lalu atau sedang dilihat di masa kini kepada pengguna. tentunya semakin banyak data semakin bagus pula metode ini.namun tentu sistem ini memiliki kelebihan dan kekurangan diantaranya  : 
+To solve the previously mentioned issues, this project offers two solutions: Content-Based Filtering and Collaborative Filtering. Both solutions have their advantages and disadvantages. The following sections explain how these methods address the problems.
 
-**Kelebihan Content-Based Filtering**:
-- Personalisasi: Content-Based Filtering dapat memberikan rekomendasi yang sangat personal karena bergantung pada preferensi pengguna yang sudah diketahui. Ini memungkinkan rekomendasi yang cocok dengan minat dan sejarah pengguna.
-- Tidak Memerlukan Data Pengguna Lain: Metode ini tidak memerlukan data pengguna lain atau kolaborasi antar pengguna. Ini bermanfaat dalam kasus-kasus di mana data pengguna terbatas atau tidak tersedia sama sekali.
-- Transparansi: Model Content-Based Filtering cenderung lebih transparan daripada metode kolaboratif. Anda dapat menjelaskan rekomendasi kepada pengguna dengan merujuk pada fitur-fitur item yang mereka sukai.
-- Penanganan Item Baru: Content-Based Filtering dapat menangani item baru dengan baik, bahkan jika tidak ada data kolaboratif. Ini karena rekomendasi didasarkan pada karakteristik item itu sendiri.
+### Content-Based Filtering
 
-Kekurangan Content-Based Filtering:
-- Keterbatasan Dalam Rekomendasi Serendah: Content-Based Filtering cenderung membatasi rekomendasi pada item yang serupa dengan yang sudah dikonsumsi oleh pengguna. Ini dapat mengurangi kemungkinan pengguna menemukan konten yang berbeda atau mendapat penawaran yang lebih menarik.
-- Keterbatasan dalam Memahami Preferensi Kompleks: Meskipun Content-Based Filtering dapat memahami preferensi berdasarkan fitur-fitur, ia mungkin tidak dapat menangkap preferensi yang lebih kompleks atau bervariasi. Misalnya, ia mungkin kesulitan merekomendasikan item yang berbeda dari biasa pengguna.
-- Keterbatasan Data: Kinerja Content-Based Filtering sangat tergantung pada kualitas dan kelengkapan data atribut item. Jika data ini tidak memadai atau tidak lengkap, maka kualitas rekomendasi akan terpengaruh.
-- Over-Spesialisasi: Ada risiko bahwa model Content-Based Filtering bisa terlalu spesifik dalam rekomendasi, menghasilkan daftar rekomendasi yang terlalu serupa.
-- Kurangnya Diversifikasi: Content-Based Filtering cenderung kurang efektif dalam menghadirkan variasi dalam rekomendasi karena cenderung merekomendasikan item dengan karakteristik yang sama.
+This method learns a user's interest profile based on data from items the user has rated. It works by recommending items similar to those the user liked in the past or is currently viewing. While more data improves this method, it has its strengths and weaknesses:
 
-### menyiapkan Variable
-dalam projek in hal yang pertama kali dilakukakn adalah membuat sebuah variable dari data yang telah kita olah dari tahap _Data preprocessing _ dari sana kita dapa menggunakan command _tolist_ untuk membuat variable bernama _data_.Setelah kita mendapatkan variable , pada projek ini untuk mempermudah pengerjaaan model pertama ,hal pertama dilakukan adalah  mengubah 
- nama variable dari data menjadi _saringan_. 
+**Advantages of Content-Based Filtering**:
+- Personalization: Provides highly personalized recommendations based on known user preferences.
+- No Need for Other Users' Data: Does not require data from other users, beneficial when user data is limited or unavailable.
+- Transparency: More transparent than collaborative methods; recommendations can be explained by referring to item features the user likes.
+- Handles New Items Well: Works well with new items, even without collaborative data, since recommendations are based on item characteristics.
+
+**Disadvantages of Content-Based Filtering**:
+- Limited Recommendations: Restricts recommendations to items similar to those already consumed, reducing the likelihood of discovering diverse content.
+- Limited Understanding of Complex Preferences: May struggle to capture complex or varied preferences, making it harder to recommend different items.
+- Data Dependency: Highly dependent on the quality and completeness of item attribute data, which can affect recommendation quality.
+- Over-Specialization: Risks being overly specific, leading to similar recommendations.
+- Lack of Diversity: Tends to offer less varied recommendations due to focusing on similar items.
+
+### Preparing Variables
+
+The first step is to create a variable from the preprocessed data using the `tolist` command to create a variable named `data`. This variable is then renamed to `saringan` for easier model processing.
 
 ### TF-IDF Vectorizer
-setelah menyiapakan nama variable , pada tahap selanjutnya kita akan menggunakan TF-IDF Vectorizer yang berasal dari library sklearn . dengan menggunakan fungsi TfidfVectorizer() kita dapat menggunakan fitur ini. Setelah menggunkan itu kita mengubah variable  menjadi bentuk matriks .yang mana pada matriks menunjukkan korelasi antara film dengan genre-nya.
 
-| judul | horror | thriller | western  | drama | adventure |
+Next, we use the TF-IDF Vectorizer from the sklearn library. The `TfidfVectorizer()` function converts the variable into a matrix showing the correlation between films and their genres.
+
+| Title | Horror | Thriller | Western | Drama | Adventure |
 | --- | --- | --- | --- | --- | --- |
-|Woyzeck | 0.0 | 00.00 | 0.0 | 1.0000 | 0.0|
-|Play the Game | 0.0 | 00.00 | 0.0 | 1.0000 | 0.0|
-|Character | 0.0 | 00.00 | 0.0 | 1.0000 | 0.0|
-|Wild Oatsk | 0.0 | 00.00 | 0.0 | 0.0000 | 0.0|
-|Too Late for Tears | 0.0 | 0.264118	 | 0.0 | 0.180515	 | 0.0|
+| Woyzeck | 0.0 | 0.0 | 0.0 | 1.0000 | 0.0 |
+| Play the Game | 0.0 | 0.0 | 0.0 | 1.0000 | 0.0 |
+| Character | 0.0 | 0.0 | 0.0 | 1.0000 | 0.0 |
+| Wild Oats | 0.0 | 0.0 | 0.0 | 0.0000 | 0.0 |
+| Too Late for Tears | 0.0 | 0.264118 | 0.0 | 0.180515 | 0.0 |
 
+This step discusses the recommendation system model created to solve the problem. The top-N recommendations are presented as output.
 
-Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk menyelesaikan permasalahan. Sajikan top-N recommendation sebagai output.
+### Cosine Similarity
 
- ### Cosine Smiliarity 
- Selanjutnya pada projekk ini akan menggunakan Cosine Smiliarity , yang mana dengan fungsi ini dapat menghitung degree smiliarity anatar judul fim dan korleasi dengan kategori genre yang dimiliki oleh film tersebut.Perhitungan similarity merupakan tahapan paling penting dalam pendekatan content-based filtering, karena pada dasarnya pendekatan ini menerapkan prinsip kesamaan antar item untuk mendapatkan hasil rekomendasi yang sesuai. Output dari cosine similarity akan menghasilkan suatu matrix kesamaan yang bisa dilihat pada konversi ke bentuk dataframe berikut.
- 
+Next, we use Cosine Similarity to calculate the degree of similarity between film titles and their genres. This calculation is crucial in content-based filtering as it applies the principle of item similarity to provide recommendations. The cosine similarity output is converted to a dataframe, as shown below.
 
-![cosine smiliarity_1](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/2617a4d9-291a-417d-824a-cecdeebb01fe)
+![cosine similarity](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/2617a4d9-291a-417d-824a-cecdeebb01fe)
 
-dari gambar diatas diketahui bentuk matriks yang  dapatkan adalah bentuk 9708 x 9708 dari gambar tersebut tidak hanya bentuk matriks saja yang  dapatkan, namun dapat dilihat kesamaaan anatr film , sperti yang terlihat dari gambar diatas yang di beri kotak berwarna merah bahwa _film_ _George Carlin: Jammin' in New York_ dan film _Oh, God! Book II_ memliliki nilai kesamaan berupa 1.0 . sehingga dapat diartikan bahwa kedua film memiliki kemiripan yang sanagt tinggi bahkan hampir sama berdasarkan genre yang mereka miliki, sehingga model dapat merekomendasikan antara kedua film.
+From the image above, the resulting matrix is 9708 x 9708, showing similarities between films. For example, the films _George Carlin: Jammin' in New York_ and _Oh, God! Book II_ have a similarity value of 1.0, indicating a high level of similarity based on their genres. Hence, the model can recommend these films interchangeably.
 
- ### Membuat Function khusus 
- pada tahapan ini , adalah tahapan untuk membuat sebuah fungsi khusus untuk menampilkan sistem rekomendasi yang sudah kita buat pada tahap sebelumnya,dengan menggunkaan funtion ini akan menampilkan rekomendasi bersarkan nilai kemiripan sesuai dengan model yang sudah kita olah sebelumnya. hal yang  pertama dilakukan oleh funtion ini mengambil data yang sudah diolah dengan sesuai range nilai kesamaan  yang telah di _declare_ lalu setelah data masuk  tahapan ini berda dalam _variable closest_, selanjutnya dalam merekemondasikan film ,normalnya namam yang diinginkan oleh user tidak akan tampil dalam daftar rekomendasi yang diinginkan, oleh karena itu sistem akan mendrop hal tersebut. jumlah rekomendasi yang ditampilkan berdasarkan nilai **K** , dalam projek ini nilainya adalah 8 . 
-![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/45a3533e-9990-4f8a-acae-ee1158cc0ba0)
+### Creating a Custom Function
 
-### Recomendation 
-masuk pada tahap akhir dalam metode ini yaitu mendapatkan rekomendasi, dalam projek ini hal pertama yang dilakukan apakah judul yang diinginkan user ada dalam daftar yang kita miliki seperti pada gambar dibawah.
+This step involves creating a custom function to display the recommendation system results based on the previous model. The function uses the preprocessed data within a defined similarity range. The function outputs the recommendations by removing the user-requested film from the list and displaying recommendations based on a value **K**, which is 8 in this project.
 
-| no |judul|genre| id |
+![custom function](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/45a3533e-9990-4f8a-acae-ee1158cc0ba0)
+
+### Recommendations
+
+In the final step, the recommendations are obtained. First, check if the user-requested film title exists in the list, as shown below.
+
+| No | Title | Genre | ID |
 | --- | --- | --- | --- |
-| 1 | Oh, God! Book II | Comedy | 5213 | 
+| 1 | Oh, God! Book II | Comedy | 5213 |
 
+Then, the user can view the film recommendations using the function:
 
-setelah itu user bisa mengetahui rekomendasi film yang sebelumnya dengan menggunakan function di bawah
-
- 
- 
-| no |judul|genre|
+| No | Title | Genre |
 | --- | --- | --- |
 | 1 | Andrew Dice Clay: Dice Rules | Comedy |
-| 2 | Made| Comedy |
-| 3 |Carry On Don't Lose Your Head | Comedy |
-| 4 | Jack and Jill	 | Comedy |
+| 2 | Made | Comedy |
+| 3 | Carry On Don't Lose Your Head | Comedy |
+| 4 | Jack and Jill | Comedy |
 | 5 | Dr. Goldfoot and the Bikini Machine | Comedy |
 | 6 | Broadway Danny Rose | Comedy |
 | 7 | Zelig | Comedy |
-| 8 | Big Business	 | Comedy |
+| 8 | Big Business | Comedy |
 
+The model recommends 8 film titles, all with the same genre, comedy.
 
+## Model Development with Collaborative Filtering
 
+This project involves several steps to achieve the desired results. Collaborative Filtering has its strengths and weaknesses:
 
+**Advantages**:
+- Serendipitous Recommendations: Provides highly relevant recommendations based on similar preferences with other users.
+- No Need for Detailed Item Information: Useful when there is insufficient descriptive information about items.
+- Handles Data Changes Well: Can adapt to new items or changing user preferences.
+- Effective for Retail Items: Suitable for recommending retail items like e-commerce products, films, or music based on user behavior.
 
-dapat dilihat model merekomendasikan 8 judul film dengan genre yang sama yaitu genre _comedy_.
+**Disadvantages**:
+- Cold Start Problem: Less effective when there is little or no user or item behavior data.
+- Scalability Issues: Similarity calculations can be computationally expensive for large platforms.
+- Over-Specialization Risk: Can become overly specific, especially with limited training data.
+- Privacy Concerns: Must consider privacy issues, especially in user-based collaborative filtering.
 
-## Model Development Dengan Collaborative Filtering
+The following steps explain the process to obtain recommendations:
 
-dalam projek ini terdapat beberapa tahap yang dilakuakn untuk mendapatkan hasil yang dibutuhkan ,tentunya sistem ini memmiliki kelebihan dan kekurangan diantaranya: 
+### Data Preparation
 
-kelebihan :
-- Rekomendasi Serendah: Collaborative Filtering mampu memberikan rekomendasi yang sangat sesuai dengan preferensi pengguna. Ini berdasarkan kesamaan preferensi dengan pengguna lain yang memiliki sejarah konsumsi serupa.
-- Tidak Bergantung pada Informasi Item: Metode ini tidak memerlukan informasi rinci tentang atribut item. Ini berguna ketika Anda memiliki banyak item tanpa informasi deskriptif yang cukup.
-- Kemampuan Menangani Perubahan Data: Collaborative Filtering dapat menangani perubahan data dengan baik. Ketika ada penambahan item baru atau perubahan preferensi pengguna, model dapat diperbarui dengan data terbaru.
-- Efektif untuk Item Ritel: Metode ini cocok untuk merekomendasikan item ritel, seperti produk e-commerce, film, atau musik, karena preferensi pengguna dapat dengan mudah diperoleh dari perilaku sebelumnya.
-
-kekurangan : 
-- Masalah Cold Start: Metode ini cenderung tidak efektif saat menghadapi situasi "cold start" di mana Anda memiliki sedikit atau tidak ada data perilaku pengguna atau item.
-- Permasalahan Skalabilitas: Untuk platform besar dengan jutaan pengguna dan item, perhitungan kesamaan dalam Collaborative Filtering bisa menjadi mahal secara komputasi.
-- Risiko Over-Spesialisasi: Ada risiko bahwa model Collaborative Filtering akan menjadi terlalu spesifik dalam rekomendasi, terutama jika tidak ada cukup variasi dalam data pelatihan.
-- Masalah Privasi: Dalam implementasi nyata, perlu diperhatikan masalah privasi, terutama dalam metode Collaborative Filtering berbasis pengguna, karena data pengguna harus dibagikan atau digunakan untuk menghitung rekomendasi.
-
-tahap akan di jelaskan peroses untuk mendapatkan hasil rekomendasi sebagai berikut :
-
-### Data preparation 
-dalam tahap ini data yang kita gunakan adalah dari file _rating.csv_ , data tersebut dimasukan kedalam variable **dd** . selanjutnya variable tersebut akan di olah kembali menjadi sesuai dengan format yang kita butuhkan, mulai dari membulatkan nilai rating  dan mengubah format  timestamp .
+Use the `ratings.csv` file and store it in the variable **dd**. Format the ratings and timestamp values appropriately.
 
 ### Split Data for Training and Validation
 
-Data dibagi untuk data train dan validasi dengan komposisi 80/20. Pembagian ini bertujuan agar data yang digunakan dapat digunakan untuk mengembangkan model dan mengevaluasi performance dari model yang telah dikembangkan.
+Split the data into training and validation sets with an 80/20 ratio. This split ensures that the data used to develop the model and evaluate its performance is balanced.
 
-### peroses Training 
+### Training Process
 
-pada tahap ini , model akan menghitung kecocokan antara pengguna dan resto dengan teknik embedding.peroses ini melakukan teknik perkalian dot product antara judul dan genre dengan skala kecocokan [ 0, 1] dan aktivasi sigmoid., pada proses compile dilakukan menggunakan BinaryCrossentropy untuk menghitung loss function, Adam (Adaptive Moment Estimation) sebagai optimizer, dan root mean squared error (RMSE) sebagai metrics evaluation. Proses training model berjalan sebanyak 100 epochs sebagai berikut. dalam  melakuakn peroses training terdapat fungsi call back untuk menghentikan ketika RMSE kurang dai 0.1 mengingat banyaknya pelatihan  yang dilakukan pada latihan ini , dengan begitu dapat menghemat waktu.
+The model calculates user and item embeddings with dot product between titles and genres on a [0, 1] scale and sigmoid activation. The model is compiled using BinaryCrossentropy for the loss function, Adam optimizer, and RMSE for evaluation metrics. The training process runs for 100 epochs with a callback to stop if RMSE is below 0.1, saving time due to extensive training.
 
-### Visualisasi Metrik
-tahap ini di tujukan untuk melihat hasil latihan model yang kita lakukan, dari sini dapat dilihat perbedaan RMSE antara _train dan test_.dengan menggunakan 100  kali pelatihan tentunya di harapkan nilai RMSE menurun secara signifikan namun dengan metode ini akan memakan waktu yang lama untuk pelatihan. disisi lain dengan  tahapan ini akan terlihat jelas perbedaan RMSE pada _train_ dan _test_. untuk grafik dan angka akan di bahas pada pembahasan evaluasi matrik.
+### Metric Visualization
 
+This step visualizes the training model results, showing RMSE differences between train and test sets. The graph and numbers will be discussed in the evaluation metrics section.
 
-### mendapatkan rekomendasi Resto 
-setelah menyelasaikan semua tahap pelatihan dan preparation selanjutnya adalah tajap untuk melihat hasil rekomendasi yang akan di dapatkan, dengan menggunakan fungsi yang telah kita buat sebelumnya , hasil rekomendasi dapat di tampilkan seperti yang ada pada gambar di bawah.
+### Obtaining Recommendations
 
- ![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/77304be7-a756-44f1-bb2a-264046423ba2)
+After completing the training and preparation steps, obtain the recommendation results using the custom function. The recommendations are displayed as shown below.
 
-
+![recommendations](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/77304be7-a756-44f1-bb2a-264046423ba2)
 
 ## Evaluation
-setelah menyelesaikan semua model selajutnya adalah tahap untuk mengevaluasi peforma dari model yang di kembangkan pada projek ini, pada projek ini model menggunakan dua buah metode yang maan akan di evaluasi satu persatu.
-### Evaluasi Content Based filteing 
-pada metode ini untuk mengukur performance model diukur menggunakan nilai metriks precisions dengan similarity. cosine smiliarity dapat di hitung secara manual dengan menggunakan rumus yang ada pada gambar di bawah : 
 
-![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/1d685c64-3840-4bd0-b419-5cf2dce37948)
+The next step is to evaluate the model performance. This project uses two methods, which are evaluated individually.
 
-setelah itu metrik yang digunakan dapat di ilustrasikan seperti ilustrasi di bawah, dari gambar di bawah dapat nilai dari smiliarity yang  di dapat pada di gambarkan seperti di bawah , dimana semakin besar nilai smiliarity yang dimiliki maka semakin besar sudut yang kita dpatkan dimana nilai _smiliarity_ nya adalah 1 begitu juga sebaliknya. 
-![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/86599dca-8e81-4da1-8db8-70ccc0cac446)
+### Evaluation of Content-Based Filtering
 
+This method uses precision metrics with cosine similarity. The cosine similarity can be calculated manually using the formula below:
 
-setelah mengetahui metriks yang di gunakan untuk mengukur precision yang di dapatkan dapat menggunkanan rumus yang ada di bawah :
+![cosine similarity formula](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/1d685c64-3840-4bd0-b419-5cf2dce37948)
 
-![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/fa79d7ae-94d7-47bb-a4fe-0f41e90c03b8)
-lalu lihat film yang ingin di rekomendasikan , disini dalam projek ini user menginginkan rekomendasi dari fillm _Oh, God! Book II_ yang memiliki genre _comedy_ .
+The similarity metric is illustrated as follows:
 
-| no |judul|genre| id |
+![similarity illustration](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/86599dca-8e81-4da1-8db8-70ccc0cac446)
+
+Next, calculate precision using the formula below:
+
+![precision formula](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/fa79d7ae-94d7-47bb-a4fe-0f41e90c03b8)
+
+The user requests recommendations for the film _Oh, God! Book II_ with the comedy genre.
+
+| No | Title | Genre | ID |
 | --- | --- | --- | --- |
-| 1 | Oh, God! Book II | Comedy | 5213 | 
+| 1 | Oh, God! Book II | Comedy | 5213 |
 
-setelah itu mari lihat hasil rekomendasi yang di dapatkan user 
+The recommendations provided by the model are:
 
- 
-| no |judul|genre|
+| No | Title | Genre |
 | --- | --- | --- |
 | 1 | Andrew Dice Clay: Dice Rules | Comedy |
-| 2 | Made| Comedy |
-| 3 |Carry On Don't Lose Your Head | Comedy |
-| 4 | Jack and Jill	 | Comedy |
+| 2 | Made | Comedy |
+| 3 | Carry On Don't Lose Your Head | Comedy |
+| 4 | Jack and Jill | Comedy |
 | 5 | Dr. Goldfoot and the Bikini Machine | Comedy |
 | 6 | Broadway Danny Rose | Comedy |
 | 7 | Zelig | Comedy |
-| 8 | Big Business	 | Comedy |
+| 8 | Big Business | Comedy |
 
+To evaluate the model, use the precision metric:
 
- 
- untuk mengevaluasi model ini  menggunnaka nilai metriks precisions dengan similarity yang mana jika melihat hasil yang di dapatkan dari model ini dapat kita hitung sebgai berikut
-Precision = #of recommendation that are relevant/#of item we recommend.
-Pada rekomendasi film di atas:
-Precission = 8/8.
-Jadi presisinya = 100%
+Precision = # of relevant recommendations / # of recommendations made.
 
-nilai 8/8 untuk precision di dapatkan dari genre yang user ingin kan , sperti yang dilihat genre film dari _Oh, God! Book II_ memiliki satu genre yaitu genre _comedy_ lalau ketika melihat hasil dari rekomedasi yang di berikan oleh model terlihat hasilnya seperti _Andrew Dice Clay: Dice Rules , Made	.Carry On Don't Lose Your Head, dan sisanya_ memiliki satu genre yang sama yaitu genre _comedy_. oleh sebab ke 8 rekomendasi memiliki smiliarity yang sama  maka precision dari model ini adalah 100 persen.
+For the above recommendations:
+Precision = 8 / 8 = 100%
 
- ### Collaborative Filtering
- 
-Evaluasi kinerja pendekatan Collaborative Filtering umumnya menggunakan metrik evaluasi yang dikenal sebagai Root Mean Squared Error (RMSE). RMSE adalah metode standar untuk mengukur rata-rata kesalahan suatu model dalam melakukan prediksi. Proses perhitungan RMSE dimulai dengan mengurangkan nilai prediksi dari nilai observasi, yang kemudian hasilnya dikuadratkan. Setelah itu, semua hasil kuadrat ini dijumlahkan (sigma jumlah) dan kemudian dibagi dengan jumlah data (n). Hasil dari perhitungan ini kemudian diakarkan kuadrat untuk menghasilkan nilai RMSE sesuai dengan rumus berikut.
+The precision of 8/8 is derived from the genre the user wanted. The comedy genre in _Oh, God! Book II_ matches all recommended films, resulting in a 100% precision.
 
-![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/074c1ab5-c17c-4f7c-ae85-1b007979858b)
+### Collaborative Filtering
 
-setelah memahami apa itu RMSE, pada projek ini terdapat pengurangan nilai RMSE yang dapat di _visualisasikan_  dari grafik dibawah, terlihat bahwa terjadi penurunan nilai RMSE walau terlihat sedikit tidak konsisten dimana adanya naik dan turun , namun jika melihat trendnya , terlihat trend penurunan RMSE sehingga didapati hasil akkhir dimana  0.27 pada nilai test dan 0.17 pada train.
+The performance of Collaborative Filtering is usually evaluated using RMSE (Root Mean Squared Error). RMSE is a standard method for measuring the average error of a model in predictions. Calculate RMSE by subtracting the predicted values from the observed values, squaring the result, summing all squared results, dividing by the number of data points (n), and taking the square root of the result, as shown below.
 
-![image](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/14ade81f-72b2-4370-81f3-1c8419f14b1f)
+![RMSE formula](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/074c1ab5-c17c-4f7c-ae85-1b007979858b)
 
+After understanding RMSE, this project visualizes the RMSE reduction as shown below. The trend shows a decrease in RMSE, with the final values being 0.27 for test and 0.17 for train.
 
-
+![RMSE graph](https://github.com/RR21-crypto/RECOMENDATION-_SYSTEM/assets/81364035/14ade81f-72b2-4370-81f3-1c8419f14b1f)
